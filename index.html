@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f0eee7">
+<title>列车换装工作室 · Bogotá</title>
+<style>
+:root{--bg:#f2f0e9;--paper:#fcfaf5;--ink:#18201b;--muted:#5d625b;--edge:#dcdcd2;--green:#dce9a3;font-family:system-ui,"Microsoft YaHei","PingFang SC",sans-serif;color:var(--ink);background:var(--bg);color-scheme:light}
+*{box-sizing:border-box}body{margin:0}h1,h2,h3,p{margin:0}button,input{font:inherit}button{cursor:pointer;color:inherit}button:focus-visible,input:focus-visible{outline:3px solid #687d31;outline-offset:3px}.shell{width:min(1352px,calc(100% - 104px));margin:auto}.mast{border-bottom:1px solid #d8d9ce}.mast .shell{height:65px;display:flex;align-items:center;justify-content:space-between;gap:12px}.identity{display:flex;align-items:center;gap:12px;letter-spacing:.13em;font-size:.82rem;font-weight:850}.monogram{display:grid;place-items:center;width:37px;height:37px;background:#1e2c22;color:#e6edba;border-radius:11px;font-weight:900;font-size:1rem;letter-spacing:-.08em}.reset{border:1px solid #cdd2c4;background:transparent;padding:8px 13px;border-radius:8px;font-size:.86rem}.reset:hover{background:#e5e9d9}.intro{padding:32px 0 23px}.intro h1{font-size:clamp(2.1rem,4.8vw,4.0rem);letter-spacing:-.07em;font-weight:860;line-height:1.1}.intro p{margin-top:9px;color:var(--muted);font-size:.94rem}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 342px;gap:18px;align-items:start;margin-bottom:38px}.visual,.controls{border:1px solid var(--edge);border-radius:17px;overflow:hidden}.visual{background:#1c2926;color:#f1f3e8;position:sticky;top:15px}.visual-head,.visual-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 17px}.visual-head{border-bottom:1px solid #4d5950}.visual-head h2,.controls h2{font-size:1rem;font-weight:770}.views{display:flex;gap:4px;background:#111b17;border-radius:8px;padding:3px}.views button{background:transparent;border:0;border-radius:5px;padding:5px 9px;color:#e1ebdf;font-size:.79rem;min-height:31px}.views button[aria-pressed=true]{background:#dce9a3;color:#202a1b;font-weight:700}.scene{display:block;width:100%;height:auto;aspect-ratio:960/520;background:#23332d}.visual-foot{border-top:1px solid #48554d;flex-wrap:wrap}.visual-foot p{font-size:.85rem;color:#cbd4c7}.export{background:var(--green);color:#202b19;border:0;border-radius:8px;font-weight:760;font-size:.84rem;padding:9px 13px;min-height:40px}.export:hover{background:#edf4c9}.controls{background:var(--paper);padding:16px 16px 12px}.controls>h2{padding-bottom:12px}.part{padding:11px 0;border-top:1px solid #e5e2d9;min-width:0}.part h3{font-size:.875rem;margin-bottom:7px}.options{display:grid;grid-template-columns:repeat(var(--columns,4),minmax(0,1fr));gap:5px}.options button{border:1px solid #dfded5;border-radius:7px;background:#f6f4ed;padding:8px 2px;font-size:.76rem;min-height:38px;white-space:nowrap}.options button[aria-pressed=true]{border-color:#273728;background:#e4eccf;color:#233520;font-weight:750}.preset-row{display:flex;gap:6px;flex-wrap:wrap}.preset{display:flex;align-items:center;gap:5px;padding:5px 6px;border:1px solid #dedfd5;background:transparent;border-radius:8px;font-size:.73rem;min-height:32px}.preset[aria-pressed=true]{border-color:#495c43;background:#edf1e4}.chip{height:13px;width:13px;border-radius:50%;border:1px solid #45524044;flex:none}.colors,.ranges{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}.color{display:flex;justify-content:space-between;align-items:center;gap:6px;min-height:34px;min-width:0;font-size:.77rem;color:var(--muted);padding:0 5px 0 7px;border:1px solid #e3e2d7;border-radius:6px}.color input{border:0;width:29px;height:27px;background:transparent;padding:3px;cursor:pointer}.range{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;font-size:.75rem;color:var(--muted);gap:2px 3px}.range output{font-weight:700;font-variant-numeric:tabular-nums}.range input{margin:2px 2px 0;width:100%;accent-color:#455c3c;cursor:pointer}.disclaimer{border-top:1px solid #e5e2d9;padding-top:9px;font-size:.72rem;color:var(--muted)}.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-width:1010px){.shell{width:calc(100% - 52px)}.workspace{grid-template-columns:minmax(0,1fr) 305px}}
+@media(max-width:740px){.shell{width:calc(100% - 28px)}.workspace{grid-template-columns:1fr;gap:12px}.visual{top:6px;z-index:1}.intro{padding:24px 0 16px}.mast .shell{height:54px}.visual-head,.visual-foot{padding:9px 11px}.controls{padding:13px}.preset,.options button{min-height:42px}.range input{min-height:25px}.intro p{font-size:.86rem}}
+</style>
+<body>
+<header class="mast"><div class="shell"><div class="identity"><span class="monogram" aria-hidden="true">M.</span> BOGOTÁ METRO STUDIO</div><button class="reset" id="reset" type="button">恢复默认</button></div></header>
+<main class="shell">
+  <div class="intro"><h1>列车换装工作室</h1><p>为波哥大地铁设计一套新外观。调整配色、车门、车窗和大灯，实时预览。</p></div>
+  <div class="workspace">
+    <section class="visual" aria-labelledby="preview">
+      <header class="visual-head"><h2 id="preview">实时预览</h2><div id="views" class="views" role="group" aria-label="预览视角"></div></header>
+      <canvas class="scene" id="scene" width="1920" height="1040" role="img" aria-label="波哥大地铁概念列车">列车造型需要支持 Canvas 的浏览器。</canvas>
+      <div class="visual-foot"><p id="summary">波哥大红</p><button class="export" id="export" type="button">下载 PNG</button></div>
+    </section>
+    <aside class="controls" aria-labelledby="customize">
+      <h2 id="customize">自定义部件</h2>
+      <section class="part"><h3>车身配色</h3><div class="preset-row" id="presets" role="group" aria-label="配色预设"></div><div class="colors"><label class="color">车身主色<input type="color" id="bodyColor"></label><label class="color">饰条颜色<input type="color" id="trimColor"></label></div></section>
+      <section class="part"><h3>车门</h3><div class="options" id="doors" role="group" aria-label="车门样式"></div><div class="ranges"><label class="range">门宽<output for="doorWidth"></output><input id="doorWidth" type="range" min="76" max="127" value="100" aria-label="门宽"></label><label class="range">门高<output for="doorHeight"></output><input id="doorHeight" type="range" min="80" max="115" value="100" aria-label="门高"></label></div></section>
+      <section class="part"><h3>车窗</h3><div class="options" id="windows" role="group" aria-label="车窗样式"></div><div class="ranges"><label class="range">窗宽<output for="windowWidth"></output><input id="windowWidth" type="range" min="74" max="123" value="100" aria-label="窗宽"></label><label class="range">窗高<output for="windowHeight"></output><input id="windowHeight" type="range" min="75" max="123" value="100" aria-label="窗高"></label></div></section>
+      <section class="part"><h3>前大灯</h3><div class="options" id="lights" role="group" aria-label="大灯样式"></div></section>
+      <p class="disclaimer">概念造型 · 尺寸以预设比例表示</p>
+    </aside>
+  </div>
+  <p class="sr" id="notice" role="status"></p>
+</main>
+<script>
+'use strict';
+const presets = {
+  bogota: ['波哥大红','#dc253a','#edbd59'], pacific: ['深海蓝','#315ea1','#66d8e1'],
+  forest: ['雨林绿','#547658','#d5eaa2'], ivory: ['晨雾白','#ddd8c8','#c45337']
+};
+const choices = {
+  views: { perspective:'斜侧视角', front:'正面' },
+  doors: { twin:'双开', panorama:'全景', flush:'无框', round:'圆舷窗' },
+  windows: { classic:'宽矩形', round:'圆角舷窗', ribbon:'长条', capsule:'胶囊' },
+  lights: { blade:'利刃', halo:'双光环', strip:'贯穿式', off:'关闭' }
+};
+const defaults = { bodyColor:'#dc253a',trimColor:'#edbd59',views:'perspective',doors:'twin',windows:'classic',lights:'blade',doorWidth:100,doorHeight:100,windowWidth:100,windowHeight:100 };
+const dimensions = ['doorWidth','doorHeight','windowWidth','windowHeight'];
+const colors = ['bodyColor','trimColor'];
+const storageKey = 'bogota-metro-studio-v1';
+const id = name => document.getElementById(name);
+let saved = {};
+try { saved = JSON.parse(localStorage.getItem(storageKey)) || {}; } catch {}
+let state = { ...defaults };
+for(const [key,options] of Object.entries(choices)) if(Object.hasOwn(options,saved[key])) state[key]=saved[key];
+for(const key of colors) if(/^#[0-9a-f]{6}$/i.test(saved[key])) state[key]=saved[key];
+for(const key of dimensions) if(Number.isInteger(saved[key]) && saved[key]>=Number(id(key).min) && saved[key]<=Number(id(key).max)) state[key]=saved[key];
+const canvas=id('scene');
+const ctx=canvas.getContext('2d');
+
+function addButton(target,key,label,color) {
+  const button=document.createElement('button');
+  button.type='button';
+  button.dataset.key=key;
+  if(color){
+    button.className='preset';
+    const chip=document.createElement('span');
+    chip.className='chip';
+    chip.style.background=color;
+    button.append(chip);
+  }
+  button.append(label);
+  id(target).append(button);
+  button.addEventListener('click',()=>{
+    if (target==='presets') [,state.bodyColor,state.trimColor]=presets[key];
+    else {
+      state[target]=key;
+      if(target==='doors'||target==='windows') state.views='perspective';
+    }
+    sync();
+  });
+}
+for(const [group,options] of Object.entries(choices))
+  for(const [key,label] of Object.entries(options)) addButton(group,key,label);
+for(const [key,[label,color]] of Object.entries(presets)) addButton('presets',key,label,color);
+for(const key of [...colors,...dimensions]) id(key).addEventListener('input',()=>{
+  state[key]=dimensions.includes(key)?Number(id(key).value):id(key).value;
+  if(dimensions.includes(key)) state.views='perspective';
+  sync();
+});
+id('reset').addEventListener('click',()=>{state={...defaults};sync();id('notice').textContent='已恢复默认造型。';});
+id('export').addEventListener('click',()=>{
+  canvas.toBlob(blob=>{
+    if(!blob) { id('notice').textContent='无法生成图片。';return; }
+    const url=URL.createObjectURL(blob);
+    const link=document.createElement('a');
+    link.href=url;
+    link.download='bogota-metro-studio-'+(state.views==='front'?'front':'perspective')+'.png';
+    link.click();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+    id('notice').textContent='PNG 已生成。';
+  },'image/png');
+});
+
+function sync(){
+  const palette=Object.keys(presets).find(k=>presets[k][1]===state.bodyColor&&presets[k][2]===state.trimColor);
+  for(const group of [...Object.keys(choices),'presets']){
+    const active=group==='presets'?palette:state[group];
+    for(const el of id(group).children) el.setAttribute('aria-pressed',String(el.dataset.key===active));
+  }
+  for(const color of colors) id(color).value=state[color];
+  for(const key of dimensions){
+    id(key).value=state[key];
+    id(key).parentElement.querySelector('output').value=state[key]+'%';
+  }
+  const label=(palette?presets[palette][0]:'自定义配色')+' · '+choices.doors[state.doors]+'门 · '+choices.windows[state.windows]+'窗';
+  id('summary').textContent=label;
+  canvas.setAttribute('aria-label',label+' · '+choices.views[state.views]+' · 大灯 '+choices.lights[state.lights]);
+  draw();
+  try{localStorage.setItem(storageKey,JSON.stringify(state));}catch{}
+}
+
+const W=960,H=520;
+const shape = path => new Path2D(path);
+function fill(path,paint){ctx.fillStyle=paint;ctx.fill(typeof path==='string'?shape(path):path);}
+function trace(path,paint,width=1){ctx.strokeStyle=paint;ctx.lineWidth=width;ctx.stroke(typeof path==='string'?shape(path):path);}
+function box(x,y,w,h,r,paint){const p=new Path2D();p.roundRect(x,y,w,h,r);fill(p,paint);return p;}
+function ellipse(x,y,rx,ry,paint){const p=new Path2D();p.ellipse(x,y,rx,ry,0,0,Math.PI*2);fill(p,paint);return p;}
+function line(x,y,xx,yy,paint,width=1){const p=new Path2D();p.moveTo(x,y);p.lineTo(xx,yy);trace(p,paint,width);}
+function gradient(x,y,xx,yy,stops){const g=ctx.createLinearGradient(x,y,xx,yy);for(const [at,color] of stops)g.addColorStop(at,color);return g;}
+function tint(hex,amount){
+  const n=parseInt(hex.slice(1),16);
+  const values=[n>>16,(n>>8)&255,n&255].map(v=>Math.round(amount>=0?v+(255-v)*amount:v*(1+amount)));
+  return 'rgb('+values.join(',')+')';
+}
+function glass(x,y,h){
+  return gradient(x,y,x+18,y+h,[[0,'#18242a'],[.22,'#637782'],[.37,'#334650'],[1,'#0b151b']]);
+}
+function draw(){
+  if(!ctx) return;
+  ctx.setTransform(2,0,0,2,0,0);
+  ctx.lineCap='round';
+  ctx.lineJoin='round';
+  ctx.fillStyle=gradient(0,0,0,H,[[0,'#243831'],[.64,'#304239'],[1,'#1c2a25']]);
+  ctx.fillRect(0,0,W,H);
+  ctx.save();
+  for(let x=25;x<W;x+=27) for(let y=16;y<H;y+=27) {
+    ctx.fillStyle='rgba(218,233,207,.19)';ctx.fillRect(x,y,1.4,1.4);
+  }
+  ctx.strokeStyle='#d3e3c146';ctx.lineWidth=1;ctx.setLineDash([7,7]);
+  ctx.strokeRect(39,83,882,348);
+  for(const x of [39,921])for(const y of [83,431]){
+    ctx.setLineDash([]);line(x-5,y,x+5,y,'#aebfa0',1);line(x,y-5,x,y+5,'#aebfa0',1);
+  }
+  line(42,403,918,403,'#bac7aa33');
+  ctx.font='600 13px system-ui, sans-serif';
+  ctx.fillStyle='#cdddbd';
+  ctx.fillText('BOGOTÁ / ESTUDIO FERROVIARIO',43,54);
+  ctx.fillStyle='#a7b99f';ctx.textAlign='right';
+  ctx.fillText(state.views==='front'?'VISTA FRONTAL':'VISTA PERSPECTIVA',917,478);
+  ctx.strokeStyle='#c1d1ac66';
+  for(let x=43;x<210;x+=8)line(x,469,x,x%5===3?478:474,'#c1d1ac66');
+  ctx.restore();
+
+  if(state.views==='front') drawFront();
+  else drawTrain();
+}
+
+function rails(){
+  fill('M32 399 L728 385 L921 417 L875 431 L48 429 Z','#1b2824');
+  trace('M54 414 L898 408','#9ca798',2);
+  trace('M64 425 L909 421','#566a5d',3);
+  for(let x=70;x<910;x+=34) line(x,415,x+16,426,'#6e8071',2);
+}
+
+function drawTrain(){
+  const {bodyColor:body,trimColor:accent}=state;
+  rails();
+  ellipse(488,385,392,27,'#0f1a1769');
+  ctx.save();
+  ctx.transform(1,-.079,0,1,0,50);
+  for(const x of [111,174,292,357,516,584,673]){
+    ellipse(x,350,20,18,'#111718');ellipse(x,350,13,12,'#5d6b66');ellipse(x,350,6,6,'#232f2e');
+  }
+  fill('M77 312 L733 312 L754 343 L668 354 L90 348 Q75 343 77 312 Z','#222b2c');
+  fill('M92 338 L681 336 L712 323 L715 337 L679 345 L93 346 Z','#4b5958');
+  const side=shape('M77 220 Q77 207 93 201 L664 180 Q695 178 724 199 L745 297 Q728 328 690 332 L93 331 Q76 327 76 314 Z');
+  fill(side,gradient(0,192,0,335,[[0,tint(body,.45)],[.2,body],[.65,tint(body,-.19)],[1,tint(body,-.43)]]));
+  ctx.save();ctx.clip(side);
+  fill('M70 197 L698 176 L724 199 L75 215 Z',gradient(0,182,0,216,[[0,'#dce2d6'],[.4,'#b2bcb3'],[1,'#687672']]));
+  fill('M73 310 L719 309 L710 331 L70 336 Z',gradient(0,304,0,330,[[0,'#b5bcb4'],[.52,'#d7d8c7'],[1,'#788681']]));
+  line(76,310,718,309,accent,4);
+  line(77,219,696,205,'#e7f0e365',1.4);
+  line(78,329,698,329,'#202b2b',2);
+  for(const x of [248,449]){
+    box(x-5,205,11,124,2,'#1c292b');
+    for(let i=-3;i<=3;i+=3)line(x+i,209,x+i,325,'#62706a',.7);
+  }
+  for(const [x,y,scale] of [[124,261,.72],[214,261,.72],[277,260,.79],[390,259,.82],[475,255,.88],[588,250,.94],[681,248,.94]]){
+    drawWindow(x,y,scale);
+  }
+  for(const [x,y,scale] of [[165,323,.75],[332,323,.87],[539,323,.97],[638,323,1]]){
+    drawDoor(x,y,scale);
+  }
+  ctx.fillStyle='#fff5e3';ctx.font='800 12px system-ui, sans-serif';ctx.fillText('BOGOTÁ',414,293);
+  ctx.restore();trace(side,'#15211f',1.5);
+  ctx.restore();
+
+  const nose='M661 191 C689 172 716 145 752 136 C791 124 849 137 875 161 C894 177 907 213 908 252 L905 321 Q898 358 875 372 Q849 390 780 386 L736 380 Q704 377 690 352 L671 313 Q662 285 661 191 Z';
+  fill(nose,gradient(675,161,889,360,[[0,tint(body,.53)],[.29,body],[.64,tint(body,-.06)],[1,tint(body,-.49)]]));
+  trace(nose,'#172622',2);
+  fill('M660 193 Q679 171 713 155 Q689 192 701 252 Q708 297 742 334 L725 363 Q688 341 673 304 Z','#ffffff16');
+  fill('M691 320 L731 366 Q753 379 793 378 Q853 382 879 360 Q899 347 906 317 L902 342 Q892 378 856 385 L785 389 Q726 388 712 368 Z','#263230');
+  const windshield='M725 158 Q783 132 838 149 Q881 158 892 205 Q902 243 892 283 Q881 314 856 332 Q809 348 760 326 Q733 307 719 267 Q696 203 725 158 Z';
+  fill(windshield,gradient(758,149,844,332,[[0,'#131e24'],[.24,'#394950'],[.5,'#667881'],[.68,'#253239'],[1,'#101818']]));
+  trace(windshield,'#171d20',3);
+  fill('M726 161 Q786 140 843 154 L874 187 Q801 167 728 190 L710 226 Q705 189 726 161 Z','#eaf8ff31');
+  fill('M733 191 Q796 169 866 191 L880 221 Q813 205 722 235 Z','#a9cfdd1c');
+  trace('M759 247 L813 287 L871 295','#0e191c',3);
+  trace('M784 275 L840 297','#142125',3);
+  box(762,162,71,12,6,'#111d21');
+  ctx.fillStyle='#e1eea0';ctx.font='700 8px system-ui,sans-serif';ctx.textAlign='center';ctx.fillText('BOGOTÁ',798,171);ctx.textAlign='start';
+  drawLights(false);
+  fill('M746 348 L869 347 Q853 376 807 378 Q774 378 746 348 Z','#172221');
+  trace('M729 342 Q789 370 878 336',accent,3);
+  box(794,360,30,13,3,'#495650');box(802,363,14,6,1,'#0d1816');
+}
+
+function drawWindow(cx,cy,scale){
+  const w=47*scale*state.windowWidth/100,h=36*scale*state.windowHeight/100;
+  const x=cx-w/2,y=cy-h/2;
+  ctx.save();
+  let outline;
+  if(state.windows==='round') outline=ellipse(cx,cy,w*.48,h*.58,'#111c1e');
+  else if(state.windows==='ribbon') outline=box(x-4,y+h*.18,w+8,h*.61,3,'#10191a');
+  else outline=box(x,y,w,h,state.windows==='capsule'?h/2:4,'#121b20');
+  ctx.clip(outline);
+  box(x-6,y-4,w+12,h+8,4,glass(x,y,h+8));
+  fill('M'+(x-3)+' '+(y+6)+' l'+(w+6)+' -3 l0 6 l-'+(w+6)+' 13 Z','#d5e7ec31');
+  if(state.windows==='classic')line(cx,y,cx,y+h,'#19262b',1);
+  if(state.windows==='ribbon')line(x,y+h*.53,x+w,y+h*.53,'#70949b66',1);
+  ctx.restore();
+  trace(outline,'#172225',3.5*scale);
+}
+
+function drawDoor(cx,bottom,scale){
+  const {doors,bodyColor,trimColor}=state;
+  const w=58*scale*state.doorWidth/100,h=112*scale*state.doorHeight/100;
+  const x=cx-w/2,y=bottom-h;
+  const panel=doors==='panorama'?'#242f34':doors==='flush'?tint(bodyColor,-.07):tint(bodyColor,-.23);
+  const outline=box(x,y,w,h,doors==='flush'?2:5,panel);
+  trace(outline,'#202d2c',1.5);
+  if(doors==='panorama'){
+    box(x+4,y+5,w-8,h*.74,6,glass(x,y,h));
+    line(cx,y+4,cx,bottom-2,'#aabcb849',1.1);
+    line(x+5,bottom-7,x+w-5,bottom-7,trimColor,2);
+  }else if(doors==='round'){
+    for(const u of [.25,.75]){
+      ellipse(x+w*u,y+h*.32,w*.18,w*.18,'#152326');
+      ellipse(x+w*u,y+h*.32,w*.14,w*.14,glass(x,y,w));
+    }
+    line(cx,y+2,cx,bottom-1,'#222d2c',1.5);
+  }else{
+    const inset=doors==='flush'?w*.17:4;
+    if(doors==='flush'){
+      box(x+inset,y+8,w-inset*2,h*.47,8,glass(x,y,h));
+    }else{
+      for(const left of [x+inset,cx+2])box(left,y+6,w/2-inset-3,h*.51,3,glass(left,y,h));
+      line(cx,y+1,cx,bottom-1,'#1c2928',1.8);
+    }
+    line(x+2,y+h*.73,x+w-2,y+h*.73,tint(bodyColor,.25),1.1);
+  }
+  box(x+w*.71,y+h*.65,5,3,1,trimColor);
+  line(x+3,bottom-3,x+w-3,bottom-3,'#adb4a9',1);
+}
+
+function drawLights(front){
+  if(state.lights==='off'){
+    if(front){box(378,303,33,7,3,'#263431');box(549,303,33,7,3,'#263431');}
+    else{box(728,308,22,6,3,'#263431');box(870,303,22,6,3,'#263431');}
+    return;
+  }
+  ctx.save();
+  ctx.shadowColor='#c7f3ff';ctx.shadowBlur=13;
+  const color='#e5fbff';
+  const [x1,x2,y1,y2]=front?[396,565,311,311]:[742,879,312,304];
+  if(state.lights==='halo'){
+    for(const [x,y] of [[x1,y1],[x2,y2]]){
+      const ring=ellipse(x,y,10,9,'#34474c');trace(ring,color,2.5);
+    }
+  }else if(state.lights==='strip'){
+    trace('M'+x1+' '+y1+' Q '+((x1+x2)/2)+' '+(Math.max(y1,y2)+32)+' '+x2+' '+y2,color,4);
+  }else{
+    trace('M'+(x1-16)+' '+(y1-8)+' l28 11',color,5);
+    trace('M'+(x2-12)+' '+(y2+5)+' l23 -15',color,5);
+  }
+  ctx.restore();
+}
+
+function drawFront(){
+  rails();
+  const {bodyColor:body,trimColor:accent}=state;
+  ellipse(480,390,179,24,'#101a1775');
+  const profile='M369 168 Q389 127 480 125 Q571 127 591 168 Q613 215 604 295 Q599 345 574 370 Q553 393 480 395 Q407 393 386 370 Q361 345 356 295 Q347 215 369 168 Z';
+  fill(profile,gradient(353,138,621,371,[[0,tint(body,.52)],[.25,body],[.7,tint(body,-.12)],[1,tint(body,-.55)]]));
+  trace(profile,'#13201d',3);
+  const wind='M388 166 Q415 140 480 140 Q545 140 572 166 Q590 197 579 255 Q567 301 543 320 Q517 342 480 343 Q443 342 417 320 Q393 301 381 255 Q370 197 388 166 Z';
+  fill(wind,gradient(388,145,550,324,[[0,'#172229'],[.36,'#687d83'],[.7,'#26333b'],[1,'#141d20']]));
+  trace(wind,'#181f22',3);
+  fill('M382 182 Q467 144 574 172 L583 190 Q500 164 376 212 Z','#cbe5ed30');
+  trace('M415 253 l79 39 M455 268 l91 25','#182426',3);
+  box(438,157,84,15,6,'#142223');
+  ctx.fillStyle='#e2ecab';ctx.textAlign='center';ctx.font='800 10px system-ui,sans-serif';ctx.fillText('BOGOTÁ',480,168);ctx.textAlign='start';
+  drawLights(true);
+  trace('M375 334 Q480 397 585 334',accent,3);
+  fill('M397 360 Q480 412 563 360 L553 385 Q480 409 408 385 Z','#1b2625');
+  box(462,376,36,12,3,'#54605b');box(472,379,16,5,2,'#1c2523');
+}
+sync();
+</script>
+</body>
+</html>
